@@ -37,7 +37,8 @@ trips
 GROUP by duration
 
 SELECT 
-AVG (duration), end_station
+AVG (duration) duration,
+end_station
 FROM 
 trips
 GROUP by end_station
@@ -53,21 +54,22 @@ GROUP by duration
 
 airbnb
 
-1.
+1. most expensive listings : Centrum West
 SELECT 
-field6, field10
+neighbourhood, price
 FROM 
 listings
-ORDER by field10 desc
-
-idk why its so expensive does not have good reviews
-whats the point of this drill, i can easily find it manually
+ORDER by price desc
 
 
+
+most popular neighborhood
  SELECT 
- field6, count(*)
+ neighbourhood, count(*)
  From   
  listings
- GROUP by field6
+ GROUP by neighbourhood
+
+
 
 could not find descending order nor could I change names of columns
