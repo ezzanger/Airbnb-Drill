@@ -3,22 +3,24 @@ MinTemperatureF
 FROM
 weather 
 WHERE 
-ZIP = 94301   **raining?
+ZIP = 94301  AND
+raining chance of precip. = 100%
 
 SELECT 
-station_id
+*
 FROM 
 stations
 WHERE 
 station_id = 84
 
 SELECT 
-duration
+duration,
+trip_id
 FROM 
 trips 
 WHERE 
-duration > '500'  **had trouble
-
+duration > '500'  
+ORDER BY duration
 
 SELECT 
 start_station
