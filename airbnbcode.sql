@@ -22,6 +22,12 @@ WHERE
 duration > '500'  
 ORDER BY duration
 
+SELECT
+MaxTemperatureF, Date, Zip
+FROM
+weather 
+ORDER BY MaxTemperatureF desc
+
 SELECT 
 start_station
 FROM 
@@ -29,15 +35,21 @@ trips
 WHERE 
 start_date like '2015-11-17'    **had trouble
 
+SELECT
+dockcount
+FROM
+stations
+ORDER BY station_id, desc
+
 
 SELECT 
-duration
+duration, start_station
 FROM 
 trips
-GROUP by duration
+ORDER BY duration asc
 
 SELECT 
-AVG (duration) duration,
+AVG(duration) duration, 
 end_station
 FROM 
 trips
