@@ -1,10 +1,10 @@
 SELECT
-MinTemperatureF
+MinTemperatureF, *
 FROM
 weather 
 WHERE 
 ZIP = 94301  AND
-raining chance of precip. = 100%
+EVENTS = 'Rain'
 
 SELECT 
 *
