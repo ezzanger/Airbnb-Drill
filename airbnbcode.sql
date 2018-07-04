@@ -66,6 +66,52 @@ FROM
 trips
 GROUP by end_station
 
+SELECT 
+trips.duration,
+weather.Events,
+trips.start_date,
+weather.Date
+FROM   
+trips 
+JOIN 
+weather 
+ON
+trips.zip_code = weather.ZIP 
+WHERE 
+weather.Events = 'Rain'
+ORDER BY duration desc 
+
+we worked with smaller table to minimize overload  SELECT
+smaller_trips.duration,
+weather.Events,
+smaller_trips.start_date,
+weather.Date,
+DATE(start_date) trip_date
+FROM   
+smaller_trips 
+JOIN 
+weather 
+ON
+trip_date = weather.Date 
+WHERE 
+weather.Events = 'Rain'
+ORDER BY duration desc 
+limit 3
+
+
+SELECT
+smaller_trips.start_station,
+stations.dockcount,
+COUNT(*)
+FROM 
+smaller_trips
+JOIN 
+stations 
+ON
+stations.name = smaller_trips.start_station
+GROUP by 1,2 
+ORDER BY 2 desc
+
 
 Airbnb Drill
 
@@ -84,6 +130,8 @@ most popular neighborhood
  From   
  listings
  GROUP by neighbourhood
+
+
 
 
 
