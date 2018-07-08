@@ -132,6 +132,34 @@ most popular neighborhood
  GROUP by neighbourhood
 
 
+Most popular months
+Select
+	price,
+	date,
+	available
+From
+	calendar c
+Where
+	available == 't'
+Group by
+	date
+Order by
+	price
+
+Cheapest Times to Go
+
+Select
+	available,
+	date,
+	count(*) as rooms
+from
+	calendar
+Where
+	available = 'f'
+Group by
+	date
+Order by
+	rooms desc
 
 
 
