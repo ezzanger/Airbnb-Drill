@@ -127,39 +127,39 @@ ORDER by price desc
 most popular neighborhood
  SELECT 
  neighbourhood, count(*)
- From   
- listings
+ FROM
+ LISTINGS
  GROUP by neighbourhood
 
 
 Most popular months
-Select
-	price,
-	date,
-	available
-From
-	calendar c
-Where
-	available == 't'
-Group by
-	date
-Order by
-	price
+SELECT
+price,
+date,
+available
+FROM
+calendar 
+WHERE
+available == 't'
+GROUP BY
+date
+ORDER BY
+price
 
 Cheapest Times to Go
 
-Select
-	available,
-	date,
-	count(*) as rooms
-from
-	calendar
-Where
-	available = 'f'
-Group by
-	date
-Order by
-	rooms desc
+SELECT
+available,
+date,
+count(*) as rooms
+FROM
+calendar
+WHERE
+available = 'f'
+GROUP BY
+date
+ORDER BY
+rooms desc
 
 
 
